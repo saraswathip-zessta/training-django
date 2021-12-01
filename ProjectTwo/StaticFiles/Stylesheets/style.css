@@ -1,0 +1,9 @@
+table, th,td {
+    border: 1px solid red;
+    text-align: center;
+    /* margin: auto; */
+
+}
+div{
+    background-color: aqua;
+}

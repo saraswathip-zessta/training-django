@@ -1,0 +1,33 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <title>Index</title>   
+</head>  
+<body>  
+  <form method="POST" class="post-form" action="/update/{{user.person_firstname}}">  
+    {% csrf_token %}  
+      <div class="container">  
+        <br>  
+        <div>  
+        <h3>Update Details</h3>  
+        </div>  
+        <div>  
+          <label >User First Name:</label>  
+          <input type="text" name="person_firstname"  required maxlength="100" value="{{ user.person_firstname }}" />  
+        </div>  
+      <div>  
+        <label>User Last Name:</label>  
+        <input type="text" name="person_lastname" required maxlength="100" value="{{ user.person_lastname }}" />  
+      </div>  
+      <div>  
+        <label>User Email:</label>  
+        <input type="email" name="person_mail" required maxlength="254" value="{{ user.person_mail }}" />  
+      </div>  
+      <div>     
+        <button type="submit" class="btn btn-success">Update</button>  
+      </div>
+    </div>    
+  </form>  
+</body>  
+</html> 

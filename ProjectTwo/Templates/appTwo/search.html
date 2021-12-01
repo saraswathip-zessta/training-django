@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Users</title>
+    <link rel="stylesheet" href="{% static 'Stylesheets/style.css' %}">
+  </head>
+    <body>
+        <form action="" method="post">
+         {% csrf_token %}
+            {{forms}}
+            <label for="order">Enter the user name:</label>
+            <input type="text" name="textfield">
+            <button type="submit" name="button">Submit</button> 
+        </form>
+        {% if details %}
+        <h1>Here are the details:</h1>
+            <p>HOTEL INFORMATION</p>
+            <br>
+            <table class="information">
+                <tr><th>Hotel Name</th>
+                <th>Phone Number</th>
+                <th>Rating</th>
+                <th>Location</th>
+                <th>Menu</th></tr>
+                <tr>
+                    <td>{{details.hotel_name}}</td>
+                    <td>{{details.hotel_phonenumber}}</td>
+                    <td>{{details.hotel_rating}}</td> 
+                    <td>{% for location in details.hotel_locations.all %}{{ location }}<br/>{% endfor %}
+                    <td>{% for item in details.hotel_menu.all %}{{ item }}<br/>{% endfor %}
+                </tr>
+            </table>
+        {% endif %}  
+    </body>
+</html>

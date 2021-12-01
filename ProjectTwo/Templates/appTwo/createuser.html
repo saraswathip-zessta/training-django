@@ -1,0 +1,44 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <title>Index</title>  
+    {% load static %}  
+</head>  
+<body>  
+<form method="POST" class="post-form" action="/create/">  
+        {% csrf_token %}  
+    <div class="container">  
+  <br>  
+    <div >  
+      <label></label>   
+      <h3>Enter Details</h3>   
+    </div>  
+    <div>  
+      <label>User First Name:</label>  
+      <div>  
+        {{ form.person_firstname}}  
+      </div>  
+    </div>  
+    <div>  
+      <label >User Last Name:</label>  
+        <div>  
+          {{ form.person_lastname }}  
+        </div>  
+    </div>  
+    <div>  
+      <label>User Email:</label>  
+      <div class="col-sm-4">  
+        {{ form.person_mail }}  
+      </div>  
+    </div>  
+    <div >  
+    <label></label>  
+    <div>  
+      <button type="submit" class="btn btn-primary">Submit</button>  
+    </div>  
+  </div>  
+  </div>  
+</form>  
+</body>  
+</html>  

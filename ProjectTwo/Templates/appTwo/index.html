@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Home</title>
+    <link rel="stylesheet" href="{% static 'Stylesheets/style.css' %}">
+  </head>
+  <body>
+    <div class="container">
+      <h1>Welcome to Hotel Chain</h1>
+      <ul>
+        <li>
+          <h2>To create a new hotel owner, click the button</h2>
+          <form action="/create">
+            <button type="submit">Create</input>
+          </form>
+        </li>
+        <li>
+          <h2>To view the owners list, click the button</h2>
+          <form action="/read">
+            <button type="submit">view</input>
+          </form>
+        </li>
+        <li>
+          <h2>To edit an existing owner details:</h2>
+          <form action="/edit">
+            <label for="person_firstname">Enter the first name of the user</label>
+            <input type="text" name="person_firstname"/>
+            <button type="submit">edit</input>
+          </form>
+        </li>
+        <li>
+          <h2>To delete an existing owner:</h2>
+          <form action="/edit">
+            <label for="person_firstname">Enter the first name of the user</label>
+            <input type="text" name="person_firstname"/>
+            <button type="submit">delete</input>
+          </form>
+        </li>
+        
+      </ul>
+    </div>
+  </body>
+</html>
